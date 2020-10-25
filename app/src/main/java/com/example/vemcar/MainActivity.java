@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     public void logout(){
         mAuth.signOut();
         LoginManager.getInstance().logOut();
+        //googleSignInClient.signOut();
         finish();
     }
 }

@@ -26,7 +26,7 @@ public class User {
         String id = getId();
         DatabaseReference bdRef = LibraryClass.getFirebaseDB().getReference();
         bdRef = bdRef.child("users").child(id);
-        this.nome=null;
+        this.id=null;
         bdRef.setValue(this);
     }
 
