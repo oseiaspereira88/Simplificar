@@ -129,11 +129,13 @@ public class LoginActivity extends AppCompatActivity implements OnConnectionFail
 
             @Override
             public void onCancel() {
+                LoginManager.getInstance().logOut();
             }
 
             @Override
             public void onError(FacebookException error) {
                 alert("Falha no Login!\nError:" + error, 0);
+                LoginManager.getInstance().logOut();
             }
         });
 
@@ -203,6 +205,7 @@ public class LoginActivity extends AppCompatActivity implements OnConnectionFail
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "signInWithCredential:failure", task.getException());
+                            mAuth.signOut();
                             updateUI(null);
                         }
                         // ...
