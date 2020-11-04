@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.vemcar">
+    package="com.example.simplificar">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".util.LibraryClass"
+        android:name="com.example.simplificar.util.LibraryClass"
         android:allowBackup="true"
         android:icon="@drawable/vemcar_app_icon04"
-        android:label="VemCar"
+        android:label="Simplificar"
         android:roundIcon="@drawable/vemcar_app_icon04"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -34,7 +34,7 @@
         </activity>
 
         <activity
-            android:name=".IntroActivity"
+            android:name="com.example.simplificar.IntroActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.simplificar.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="com.example.vemcar.LoginActivity" />
@@ -52,7 +52,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.simplificar.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_main">
             <intent-filter>

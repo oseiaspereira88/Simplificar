@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:856328668610:android:1e9736ef4ad70f8019025b",
+        "mobilesdk_app_id": "1:856328668610:android:a7839bd2f39dc02a19025b",
         "android_client_info": {
-          "package_name": "com.example.vemcar"
+          "package_name": "com.example.simplificar"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "856328668610-j46jkjsqf7eq4durmejml42l7sltv4bb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.simplificar",
+            "certificate_hash": "3bbf7dbb4d968c95b8fdb94330967e1b02c3ae59"
+          }
+        },
         {
           "client_id": "856328668610-nufdiarg6ppksqcpeo224lhfs6qs89hd.apps.googleusercontent.com",
           "client_type": 3
