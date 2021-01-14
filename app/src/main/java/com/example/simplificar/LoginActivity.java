@@ -274,7 +274,7 @@ public class LoginActivity extends AppCompatActivity implements OnConnectionFail
         Intent it = new Intent(getBaseContext(), MainActivity.class);
 
         if ((user != null && user.isEmailVerified())) {
-            if (User.haveNameAndIsEqualEmailSP(getApplicationContext(), user.getEmail())) {
+            if (User.haveNameAndEmailEqualSP(getApplicationContext(), user.getEmail())) {
                 User newUser = new User();
                 newUser.restaureNameSP(getApplicationContext());
                 newUser.setEmail(user.getEmail());
@@ -283,7 +283,9 @@ public class LoginActivity extends AppCompatActivity implements OnConnectionFail
                 newUser.deleteNameSP(getApplicationContext());
                 startActivity(it);
             } else {
-                startActivity(it);
+                if(isLogin){
+                    startActivity(it);
+                }
             }
         } else if (isUserLogged()) {
             startActivity(it);
@@ -352,7 +354,7 @@ public class LoginActivity extends AppCompatActivity implements OnConnectionFail
                 } else if (verificarCampos()) {
                     if (isLogin) {
                         try {
-                            signIn(email, senha);
+                            signInWithEmail(email, senha);
                         } catch (NoSuchAlgorithmException e) {
                             e.printStackTrace();
                         }
@@ -466,7 +468,7 @@ public class LoginActivity extends AppCompatActivity implements OnConnectionFail
         return isOK;
     }
 
-    public void signIn(String nome, String senha) throws NoSuchAlgorithmException {
+    public void signInWithEmail(String nome, String senha) throws NoSuchAlgorithmException {
         mAuth.signInWithEmailAndPassword(email, CryptWithMD5.gerarMD5Hast(senha))
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

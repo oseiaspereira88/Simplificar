@@ -8,7 +8,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class LibraryClass extends Application {
     private static FirebaseDatabase firebaseBD;
-    public static String PREF = "com.example.vemcar.PREF";
+    public static String PREF = "com.example.simplificar.PREF";
 
     public static FirebaseDatabase getFirebaseDB(){
         if(firebaseBD==null){

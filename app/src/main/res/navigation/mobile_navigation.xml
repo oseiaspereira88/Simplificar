@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.simplificar.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_agenda"
+        android:name="com.example.simplificar.ui.agenda.AgendaFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_agenda" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.simplificar.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_opcoes"
+        android:name="com.example.simplificar.ui.mais.MaisOpcoesFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_mais_opcoes" />
 </navigation>

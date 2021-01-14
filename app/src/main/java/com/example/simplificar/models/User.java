@@ -56,7 +56,7 @@ public class User {
         sp.edit().putString(NOME, "").apply();
     }
 
-    public static boolean haveNameAndIsEqualEmailSP(Context ctx, String email){
+    public static boolean haveNameAndEmailEqualSP(Context ctx, String email){
         boolean is = false;
         SharedPreferences sp = ctx.getSharedPreferences(PREF, Context.MODE_PRIVATE);
         String nome = sp.getString(NOME,"");

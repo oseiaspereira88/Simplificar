@@ -4,77 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbarSize="0dp"
+    android:scrollbarStyle="outsideOverlay"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/bg_home02">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:scrollbars="none"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/browser_actions_bg_grey"
+                    app:cardCornerRadius="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/llTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="4dp"
+                        tools:visibility="invisible">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/reem_kufi_regular"
+                            android:gravity="end"
+                            android:text="Simplifi"
+                            android:textColor="@color/com_facebook_button_background_color_selected"
+                            android:textSize="42sp" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/reem_kufi_regular"
+                            android:text="Car"
+                            android:textColor="@color/com_facebook_button_login_background_color"
+                            android:textSize="42sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imgBGPainelShadow"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:src="@drawable/bg_home_shadow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+
+                <ImageView
+                    android:id="@+id/imgBGPainel"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
                     android:src="@drawable/bg_home"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <LinearLayout
-                    android:id="@+id/llTitulo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:text="Simplifi"
-                        android:textSize="36sp" />
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Car"
-                        android:textSize="36sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageProfile"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="32dp"
-                    android:src="@drawable/user_icon"
-                    app:civ_border_color="#FF000000"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/com_facebook_profile_picture_blank_square"
+                    app:civ_border_color="@color/com_facebook_button_background_color"
                     app:civ_border_width="2dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/llTitulo" />
+                    app:layout_constraintTop_toBottomOf="@+id/cardView5" />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -91,7 +119,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="32dp"
                     android:gravity="center_vertical"
                     android:text="Você não tem nada agendado para hoje e nenhuma novidade."
                     app:layout_constraintBottom_toBottomOf="@+id/imageProfile"
@@ -113,10 +141,10 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="32dp"
                     app:cardCornerRadius="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -131,14 +159,16 @@
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
-                    android:id="@+id/linearLayout20"
+                    android:id="@+id/llMenu1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
+                    android:paddingBottom="24dp"
                     android:showDividers="middle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -149,21 +179,34 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:paddingRight="32dp">
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
-                        <ImageView
-                            android:id="@+id/imageView18"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_marginBottom="4dp"
-                            android:src="@drawable/button_google" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/acao1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            app:cardCornerRadius="60dp">
+
+                            <ImageView
+                                android:id="@+id/imgAcao1"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/novo_veiculo1" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/textView19"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:gravity="center"
-                            android:text="Ação 1" />
+                            android:text="Novo"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -172,21 +215,33 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:paddingRight="32dp">
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
-                        <ImageView
-                            android:id="@+id/imageView20"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_marginBottom="4dp"
-                            android:src="@drawable/button_google" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/acao2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            app:cardCornerRadius="60dp">
+
+                            <ImageView
+                                android:id="@+id/imgAcao2"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/icon_rotina" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/textView21"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:gravity="center"
-                            android:text="Ação 1" />
+                            android:text="Rotinas"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -195,21 +250,33 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:paddingRight="32dp">
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
-                        <ImageView
-                            android:id="@+id/imageView22"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_marginBottom="4dp"
-                            android:src="@drawable/button_google" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/acao3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            app:cardCornerRadius="60dp">
+
+                            <ImageView
+                                android:id="@+id/imgAcao3"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/icon_favoritos" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/textView23"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:gravity="center"
-                            android:text="Ação 1" />
+                            android:text="Favoritos"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -217,39 +284,55 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="8dp">
 
-                        <ImageView
-                            android:id="@+id/imageView7"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_marginBottom="4dp"
-                            android:src="@drawable/button_google" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/acao4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            app:cardCornerRadius="60dp">
+
+                            <ImageView
+                                android:id="@+id/imgAcao4"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/icon_exprorar2" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/textView8"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:gravity="center"
-                            android:text="Ação 1" />
+                            android:text="Explorar"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linearLayout3"
+                    android:id="@+id/llMenu2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:showDividers="middle"
                     android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgBGPainel"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout20"
+                    app:layout_constraintTop_toBottomOf="@+id/llMenu1"
                     tools:visibility="gone">
 
                     <LinearLayout
@@ -257,21 +340,32 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:paddingRight="32dp">
+                        android:paddingLeft="16dp"
+                        android:paddingBottom="8dp">
 
-                        <ImageView
-                            android:id="@+id/imageView9"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_marginBottom="4dp"
-                            android:src="@drawable/button_google" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardConfig01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            app:cardCornerRadius="60dp">
+
+                            <ImageView
+                                android:id="@+id/imgAcao5"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/icon_pagamento1" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/textView10"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:gravity="center"
-                            android:text="Ação 1" />
+                            android:text="Pagamento"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -280,21 +374,32 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:paddingRight="32dp">
+                        android:paddingLeft="16dp"
+                        android:paddingBottom="8dp">
 
-                        <ImageView
-                            android:id="@+id/imageView11"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_marginBottom="4dp"
-                            android:src="@drawable/button_google" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardConfig02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            app:cardCornerRadius="60dp">
+
+                            <ImageView
+                                android:id="@+id/imgAcao6"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/icon_rotina" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/textView12"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:gravity="center"
-                            android:text="Ação 1" />
+                            android:text="Rotinas"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -303,21 +408,32 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:paddingRight="32dp">
+                        android:paddingLeft="16dp"
+                        android:paddingBottom="8dp">
 
-                        <ImageView
-                            android:id="@+id/imageView14"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_marginBottom="4dp"
-                            android:src="@drawable/button_google" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardConfig03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            app:cardCornerRadius="60dp">
+
+                            <ImageView
+                                android:id="@+id/imgAcao7"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/icon_vip2" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/textView15"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:gravity="center"
-                            android:text="Ação 1" />
+                            android:text="Cliente VIP"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -325,116 +441,58 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="8dp">
 
-                        <ImageView
-                            android:id="@+id/imageView16"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_marginBottom="4dp"
-                            android:src="@drawable/button_google" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardConfig04"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            app:cardCornerRadius="60dp">
+
+                            <ImageView
+                                android:id="@+id/imgAcao8"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:paddingRight="4dp"
+                                android:src="@drawable/icon_indicacoes2" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/textView17"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:gravity="center"
-                            android:text="Ação 1" />
+                            android:text="Indicações"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
-                    android:src="@drawable/com_facebook_tooltip_black_bottomnub"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tvVerTodas"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="32dp"
                     android:gravity="center"
-                    android:text="Ver mais opções"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+                    android:text="VER TODAS"
+                    app:layout_constraintEnd_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="32dp"
                     android:text="Ações Rápidas"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cardView"
                     app:layout_constraintTop_toBottomOf="@+id/cardView" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView3"
-                android:layout_width="160dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:cardCornerRadius="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13">
-
-                <ImageView
-                    android:id="@+id/imageView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/moto_card_bg" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView2"
-                android:layout_width="160dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13">
-
-                <ImageView
-                    android:id="@+id/imageView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/bg01" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView4"
-                android:layout_width="160dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView20"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginRight="60dp"
-                    android:layout_marginBottom="40dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/add_icon001" />
-            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/textView13"
@@ -448,37 +506,40 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Honda Civic 2016"
-                app:layout_constraintEnd_toEndOf="@+id/cardView2"
-                app:layout_constraintStart_toStartOf="@+id/cardView2"
-                app:layout_constraintTop_toBottomOf="@+id/cardView2" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Yamaha Crosser 150s"
-                app:layout_constraintEnd_toEndOf="@+id/cardView3"
-                app:layout_constraintStart_toStartOf="@+id/cardView3"
-                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="116dp"
-                android:gravity="center"
-                android:text="Novo veículo"
+            <GridView
+                android:id="@+id/gvVeiculos"
+                android:layout_width="match_parent"
+                android:layout_height="506dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:columnWidth="170dp"
+                android:horizontalSpacing="2dp"
+                android:numColumns="auto_fit"
+                android:paddingBottom="56dp"
+                android:stretchMode="spacingWidthUniform"
+                android:verticalSpacing="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/cardView4"
-                app:layout_constraintStart_toStartOf="@+id/cardView4" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <TextView
+                android:id="@+id/tvInfoVeiculos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:text="Nenhum veiculo foi adicionado"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
